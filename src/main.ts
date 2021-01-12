@@ -14,7 +14,7 @@ Vue.config.productionTip = false
 
 const httpLink = createHttpLink({
   // You should use an absolute URL here
-  uri: 'http://localhost:8000/graphql',
+  uri: 'https://testsubscriptionswithpusher.herokuapp.com/graphql',
 })
 
 const cache = new InMemoryCache()
@@ -22,7 +22,7 @@ const cache = new InMemoryCache()
 const pusherLink = new PusherLink({
   pusher: new Pusher("528a43e52a265f4b5f54", {
     cluster: "us2",
-    authEndpoint: `http://localhost:8000/graphql/subscriptions/auth`,
+    authEndpoint: `https://testsubscriptionswithpusher.herokuapp.com/graphql/subscriptions/auth`,
     auth: {
       headers: {
         authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYxMDM5NjIxNiwiZXhwIjoxNjEyOTg4MjE2LCJuYmYiOjE2MTAzOTYyMTYsImp0aSI6IlJqbXBZU2NPOWdvRzd1cnkiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiYWRtaW4ifQ.0N6nJ-rlViJdQiAPPDgHJjCj6Hyw57Cs3Rc5DMgDr64",
